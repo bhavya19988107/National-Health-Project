@@ -1,112 +1,125 @@
-🏥 National Health Analysis Dashboard
-An interactive Power BI report developed by Bhavya Jain that provides comprehensive insights into patient demographics, treatment trends, and hospital performance across multiple years.
+# National Health Dashboard
 
-📁 Repository Structure
-plaintext
-Copy
-Edit
-National-Health-Analysis/
-├── screenshots/
-│   ├── demographics.png
-│   ├── key_trends.png
-│   └── treatment_cost.png
-├── Health_Analysis.pbix
-├── README.md
-└── data/
-    └── raw_data.csv
-🧩 Project Overview
-This dashboard offers a detailed analysis of hospital data, segmented into three thematic pages:
+A comprehensive PowerBI dashboard for healthcare analytics and patient management, providing insights into patient demographics, key trends, and treatment costs across multiple medical facilities.
 
-Patient Demographics – Visualizes patient age, gender, and occupancy statistics.
+## 📊 Dashboard Overview
 
-Key Trends – Analyzes admissions, billing, and length of stay (LOS) over time.
+This healthcare analytics dashboard provides three main views:
 
-Treatment & Cost – Examines medication patterns, cost breakdowns by stay length and hospital.
-Reddit
-+1
-ZoomCharts
-+1
+### 1. Patient Demographics
+- **Patient Volume**: 802 admitted patients (↑52.8% vs 2019)
+- **Resource Utilization**: 340 rooms/bedspace (↑14.5% vs 2019)
+- **Financial Metrics**: Average billing amount of $24,635 (↓5.8% vs 2019)
+- **Staffing**: 791 doctors (↑52.7% vs 2019)
+- **Efficiency**: 15.42 days average length of stay (↓1.8% vs 2019)
+- **Demographics**: Average patient age of 51.19 years (↓1.8% vs 2019)
 
-🛠 Build Steps
-1. Data Preparation (Power Query)
-Imported raw tables: Admissions, Patients, Physicians, Rooms, Billing, Medications.
+### 2. Key Trends
+- **Temporal Analysis**: Monthly and daily admission patterns
+- **Admission Types**: Breakdown by elective, emergency, and urgent cases
+- **Length of Stay Distribution**: Categorized by short, moderate, long, and extended stays
+- **Day-wise Patterns**: Comprehensive weekly admission tracking
 
-Standardized column names and data types.
+### 3. Treatment & Cost Analysis
+- **Cost Distribution**: Billing analysis by length of stay categories
+- **Medication Prescriptions**: 5,550 total prescriptions across conditions
+- **Multi-facility Comparison**: Performance metrics across 10+ healthcare facilities
+- **Condition-specific Costs**: Detailed financial breakdown by medical condition
 
-Cleaned nulls, errors, and duplicates.
+## 🏥 Featured Medical Facilities
 
-Created Parameters to dynamically filter the dataset.
+- **Houston Methodist Hospital**: 20,402 total patients
+- **Johns Hopkins Hospital**: 11,268 total patients
+- **UCLA Medical Center**: 6,853 total patients
+- **Massachusetts General Hospital**: 2,471 total patients
+- **Cleveland Clinic**: 2,424 total patients
+- **Mayo Clinic**: 2,400 total patients
+- **Northwestern Memorial Hospital**: 2,511 total patients
+- **UCSF Medical Center**: 2,432 total patients
+- **NewYork-Presbyterian Hospital**: 2,334 total patients
+- **Cedars-Sinai Medical Center**: 2,405 total patients
 
-Built a Calendar (Date) table for time-intelligent analysis.
+## 🔍 Key Medical Conditions Tracked
 
-2. Data Modeling
-Designed a star schema with Admissions as the central fact table.
+- **Arthritis**: Primary focus with detailed cost analysis
+- **Asthma**: Chronic respiratory condition tracking
+- **Cancer**: Comprehensive oncology metrics
+- **Diabetes**: Endocrine disorder management
+- **Hypertension**: Cardiovascular health monitoring
+- **Obesity**: Metabolic health assessment
 
-Linked dimension tables: Patients, Rooms, Physicians, Medications, Dates.
+## 📈 Key Performance Indicators
 
-Set up one-to-many relationships for efficient filtering.
+### Operational Metrics
+- **Capacity Utilization**: Room and bedspace efficiency
+- **Average Length of Stay**: 15.42 days with year-over-year improvement
+- **Patient Throughput**: 802 admitted patients with significant growth
+- **Staff Productivity**: Doctor-to-patient ratios and utilization
 
-3. DAX Measures
-Distinct Patients, Distinct Rooms, Distinct Doctors.
+### Financial Metrics
+- **Average Billing Amount**: $24,635 per patient
+- **Cost per Length of Stay**: Detailed breakdown by stay duration
+- **Prescription Costs**: Medication expense analysis
+- **Revenue Trends**: Year-over-year financial performance
 
-Avg Billing Amount = AVERAGE(Billing[Amount]).
+### Quality Metrics
+- **Patient Demographics**: Age distribution and gender analysis
+- **Admission Patterns**: Seasonal and weekly trends
+- **Treatment Outcomes**: Condition-specific performance
+- **Resource Allocation**: Optimal distribution across facilities
 
-Avg LOS = AVERAGE(DATEDIFF(AdmissionDate, DischargeDate, DAY)).
+## 🛠️ Technical Features
 
-Measures support slicer filters for Year and Medical Condition.
+- **Interactive Filtering**: Dynamic filtering by medical condition, hospital, and year
+- **Comparative Analysis**: Year-over-year performance metrics
+- **Real-time Updates**: Current data visualization with trend indicators
+- **Multi-dimensional Views**: Patient demographics, trends, and cost analysis
+- **Drill-down Capability**: Detailed analysis from summary to granular data
 
-4. Report Design & Navigation
-Structured into three pages: Patient Demographics, Key Trends, and Treatment & Cost.
+## 📊 Data Visualization Components
 
-Integrated slicers for Year and Medical Condition.
+### Charts and Graphs
+- **Bar Charts**: Age group and gender distribution
+- **Line Charts**: Monthly admission trends
+- **Pie Charts**: Day type and length of stay distribution
+- **Stacked Charts**: Multi-category comparative analysis
+- **Heat Maps**: Day-wise admission patterns
 
-Incorporated KPI cards, bar charts, line trends, and data tables.
+### Key Metrics Cards
+- **KPI Cards**: Primary metrics with trend indicators
+- **Comparative Metrics**: Year-over-year percentage changes
+- **Summary Statistics**: Total counts and averages
+- **Performance Indicators**: Color-coded status indicators
 
-Enabled seamless navigation via Bookmarks and Selection Pane.
+## 🎯 Use Cases
 
-📊 Dashboard Pages & Insights
-🫂 1. Patient Demographics
-KPI cards display admissions, rooms occupied, average billing, average LOS, average age, and doctor count.
+### Healthcare Administrators
+- **Resource Planning**: Optimize bed allocation and staffing
+- **Budget Management**: Track and control healthcare costs
+- **Performance Monitoring**: Assess facility and department efficiency
+- **Strategic Planning**: Make data-driven decisions for facility expansion
 
-Age group and gender bar charts reveal demographic distributions.
+### Clinical Teams
+- **Patient Flow Management**: Understand admission patterns
+- **Treatment Optimization**: Analyze length of stay trends
+- **Resource Allocation**: Manage medical staff and equipment
+- **Quality Improvement**: Monitor patient outcomes and satisfaction
 
-Interactive filtering by year and medical condition.
+### Financial Teams
+- **Revenue Analysis**: Track billing amounts and payment patterns
+- **Cost Control**: Monitor treatment costs across conditions
+- **Budget Forecasting**: Predict future financial performance
+- **Insurance Management**: Analyze payer mix and reimbursements
 
-📈 2. Key Trends
-Line charts display trends in admissions, average billing, and LOS over time.
+## 💡 Key Insights
 
-Useful for spotting seasonal and annual changes in healthcare usage.
+1. **Growth Trend**: 52.8% increase in admitted patients compared to 2019
+2. **Efficiency Improvement**: 1.8% reduction in average length of stay
+3. **Capacity Expansion**: 14.5% increase in available rooms/bedspace
+4. **Cost Management**: 5.8% decrease in average billing amount
+5. **Staffing Growth**: 52.7% increase in medical staff
 
-💊 3. Treatment & Cost
-KPI visuals highlight patients, rooms, doctors, billing, LOS, and average age.
 
-Billing comparisons by length of stay and admission type (Elective, Urgent, Emergency).
+---
 
-Hospital-by-hospital billing breakdowns and medication usage tables categorized by condition.
-
-🚀 Getting Started
-bash
-Copy
-Edit
-git clone https://github.com/bhavya19988107/National-Health-Analysis.git
-cd National-Health-Analysis
-Open Health_Analysis.pbix in Power BI Desktop.
-
-Apply slicers for year and medical condition.
-
-Use bookmarks and selection pane to navigate between pages.
-Coupler.io Blog
-
-🔧 Tools & Techniques
-Power Query – Data ETL, parameter controls, calendar table creation.
-
-Data Modeling – Star schema for optimized performance.
-
-DAX – For building strong insight-driven metrics.
-
-Report Navigation – Bookmarks, selection pane, KPI visuals.
-GoodData
-
-👤 About the Author
-Built by Bhavya Jain, passionate about healthcare analytics and data visualization.
-If this was helpful, please ⭐ the repo, share feedback, or reach out to collaborate!
+*This dashboard is designed to support healthcare decision-making through comprehensive data visualization and analytics.*
